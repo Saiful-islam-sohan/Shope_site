@@ -1,21 +1,19 @@
-
-
 const Items = (props) => {
+    console.log(props);
+    const { name, image, new_price, old_price } = props.item;
+
     return (
-        <div className="item">
-            <img src={props.image} alt="" />
-            <p>{props.name}</p>
-            <div className="item-price">
+        <div className="">
+            <img src={image} alt="" className="w-[150px] h-[150px]"/>
+            <p>{name}</p>
+            <div className="flex justify-between gap-[8px] item-pric" >
                 <div className="item-price-new">
-                    {props.new_price}
+                    ${new_price}
                 </div>
                 <div className="item-price-old">
-                    {
-                        props.old_Price
-                    }
+                   ${old_price} {/* Corrected the variable name */}
                 </div>
             </div>
-            
         </div>
     );
 };
